@@ -6,7 +6,7 @@ with open('readme.md') as fh:
 
 setuptools.setup(
     name='psr.log',
-    version='1.0.0',
+    version='2.0.0',
     description='Common interface for logging libraries',
     long_description=long_description,
     long_description_content_type='text/markdown',

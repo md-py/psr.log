@@ -14,6 +14,15 @@ describes a logger. See the specification for more details.
 
 ![Architecture overview](_static/architecture.class-diagram.svg)
 
+## Notice
+
+Since `2.x` version `psr.log` does not supports PSR-3
+and has not backward compatible code entities 
+changes (see [changelog](changelog.md) for details).
+
+If you would like to use contract definitions closest 
+to PSR-3 you have to switch to [1.x version]() 
+
 ## Installation
 
 ```sh

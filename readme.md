@@ -1,11 +1,9 @@
-# psr.log
+# psr.log 2
 
-[PSR-3](https://www.php-fig.org/psr/psr-3/) (php standard recommendation) port for python 3.5+
+Continued logger contract based on [PSR-3 Logger interface](https://www.php-fig.org/psr/psr-3/) 
+(php standard recommendation) port for python 3.5+.
 
 ---
-
-This repository holds interfaces/classes related to 
-[PSR-3](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md).
 
 Note that this is not a logger of its own. It is merely an interface that
 describes a logger. See the specification for more details.
@@ -13,6 +11,15 @@ describes a logger. See the specification for more details.
 ## Architecture overview
 
 ![Architecture overview](docs/_static/architecture.class-diagram.svg)
+
+## Notice
+
+Since `2.x` version `psr.log` does not supports PSR-3
+and has not backward compatible code entities 
+changes (see [changelog](changelog.md) for details).
+
+If you would like to use contract definitions closest 
+to PSR-3 you have to switch to [1.x version]() 
 
 ## Installation
 

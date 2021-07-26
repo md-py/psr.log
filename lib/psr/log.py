@@ -1,16 +1,36 @@
-""" PSR-3 Logger interface port (see https://www.php-fig.org/psr/psr-3/) """
+""" Continued logger contract based on "PSR-3 Logger interface" port (see https://www.php-fig.org/psr/psr-3/) """
 
 
 # Metadata
-__version__ = '1.0.0'
+__version__ = '2.0.0'
+__author__ = 'https://md.land/md'
 __all__ = (
     # Metadata
     '__version__',
+    '__author__',
+    # Constants
+    'LEVEL_EMERGENCY',
+    'LEVEL_ALERT',
+    'LEVEL_CRITICAL',
+    'LEVEL_ERROR',
+    'LEVEL_WARNING',
+    'LEVEL_NOTICE',
+    'LEVEL_INFO',
+    'LEVEL_DEBUG',
     # Contract
     'LoggerInterface',
-    'LogLevel',
-    'LoggerAwareInterface',
 )
+
+
+# Constants
+LEVEL_EMERGENCY = 'emergency'
+LEVEL_ALERT = 'alert'
+LEVEL_CRITICAL = 'critical'
+LEVEL_ERROR = 'error'
+LEVEL_WARNING = 'warning'
+LEVEL_NOTICE = 'notice'
+LEVEL_INFO = 'info'
+LEVEL_DEBUG = 'debug'
 
 
 # Contract
@@ -26,9 +46,6 @@ class LoggerInterface:
     The context array can contain arbitrary data, the only assumption that
     can be made by implementors is that if an Exception instance is given
     to produce a stack trace, it MUST be in a key named "exception".
-
-    See https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md
-    for the full interface specification.
     """
 
     def emergency(self, message: str, context: dict = None) -> None:
@@ -81,24 +98,4 @@ class LoggerInterface:
 
     def log(self, level: str, message: str, context: dict = None) -> None:
         """ Logs with an arbitrary level. """
-        raise NotImplementedError
-
-
-class LogLevel:
-    """ Describes log levels. """
-    EMERGENCY = 'emergency'
-    ALERT = 'alert'
-    CRITICAL = 'critical'
-    ERROR = 'error'
-    WARNING = 'warning'
-    NOTICE = 'notice'
-    INFO = 'info'
-    DEBUG = 'debug'
-
-
-class LoggerAwareInterface:
-    """ Describes a logger-aware instance. """
-
-    def set_logger(self, logger: LoggerInterface) -> None:
-        """ Sets a logger instance on the object. """
         raise NotImplementedError

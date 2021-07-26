@@ -21,21 +21,6 @@ package psr.log {
     ---
     + log (level: str, message: str, context: dict = None) -> None
   }
-
-  enum LogLevel {
-    EMERGENCY = 'emergency'
-    ALERT = 'alert'
-    CRITICAL = 'critical'
-    ERROR = 'error'
-    WARNING = 'warning'
-    NOTICE = 'notice'
-    INFO = 'info'
-    DEBUG = 'debug'
-  }
-
-  interface LoggerAwareInterface {
-    + set_logger(self, logger: LoggerInterface) -> None:
-  }
 }
 
 @enduml
